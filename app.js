@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyParse = require('body-parser')
+require("dotenv").config();
 
-const PORT =3000;
+const port = process.env.PORT || 3000;
 
 const app = express();
 app.use(bodyParse.json())
@@ -39,5 +40,5 @@ app.post('/product/create/:id',(req,res)=>{
 
 
 app.listen(3000,()=>{
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`Server is running on port ${port}`);
 });
